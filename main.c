@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <string.h>
+#include <math.h>
 
 /*
 Random direction generator to play at timber lakes elementary
@@ -20,12 +22,12 @@ Create an automatic mode
 //using namespace std;
 
 void menue();
-//void playGame(int);
-//bool exitGame();
-//void upDirection();
-//void leftDirection();
-//void rightDirection();
-//void credits();
+void playGame(int);
+void exitGame();
+void upDirection();
+void leftDirection();
+void rightDirection();
+void credits();
 
 
 int main()
@@ -52,7 +54,7 @@ void menue(){
 
 
 
-   // do{
+    //do{
     printf("Welcome To Direction\n");
     printf("select your option:\n");
 
@@ -61,7 +63,7 @@ void menue(){
     printf("(3) end game\n");
 
     scanf(" %d", &input);
-    switch(input == 0){
+    switch(input){
     case 1:
         printf("Starting game ...\n Enter The Number of rounds \n");
         scanf(" %d", &numberOfRounds);
@@ -69,12 +71,12 @@ void menue(){
         break;
     case 2:
         //Viewing Credits
-       // credits();
+        credits();
         break;
     case 3:
         //end
        // menueAgain = exitGame();
-        menueAgain = 1;
+       // menueAgain = 1;
         break;
     default:
         printf("Incorrect Input \n");
@@ -83,35 +85,35 @@ void menue(){
 
     }
 
-    //}while(menueAgain == 0);
+   // }while(menueAgain == 0);
 
 
 }
 //-------------------------------------------------------------------------------
-/*
-void playGame(int numberOfRounds){
-    cout << "Play Game\n";
-    // pause system when ready press enter
-    for(int i = 0; i < numberOfRounds;i++){
 
-            cout << "Round " << i +1 << endl;
-            cout << "Ready ? ..." << endl;
-            system("pause");
+void playGame(int numberOfRounds){
+    printf("Play Game\n");
+    // pause system when ready press enter
+    for(int i = 0; i < numberOfRounds; i++){
+
+            printf("Round %i \n", numberOfRounds +1);
+            printf("Ready ? ...\n");
+           // system("pause");
             int randomNum = rand() % 3;
             switch(randomNum)
             {
             case 0:
-                upDirection();
+               // upDirection();
                 break;
             case 1:
-                leftDirection();
+               // leftDirection();
                 break;
             case 2:
-                rightDirection();
+               // rightDirection();
                 break;
             default:
-                cout << "inpropper rand num generated " << endl;
-                cout << "num generated = " << randomNum << endl;
+                printf("Improper random number generated\n");
+                printf("Num generated = %i \n", randomNum);
                 break;
             }
 
@@ -119,56 +121,57 @@ void playGame(int numberOfRounds){
 
 }
 
-bool exitGame(){
-    cout << "Exiting Game... Press enter to exit \n";
+void exitGame(){
+    printf("Exiting Game... Press enter to exit \n");
     //add a system pause
-    system("pause");
-    return false;
+    //system("pause");
+    //return 0;
 }
+
 //----------------------------------------------------------------------------------
 
 void upDirection(){
-    cout << "UP" << endl;
-    cout << "     ." << endl;
-cout << "   .:;:." << endl;
-cout << " .:;;;;;:." << endl;
-cout << "   ;;;;;" << endl;
-cout << "   ;;;;;" << endl;
-cout << "   ;;;;;" << endl;
-cout << "   ;;;;;" << endl;
-cout << "   ;:;;;" << endl;
-cout << "   : ;;;" << endl;
-cout << "     ;:;" << endl;
-cout << "   . :.;" << endl;
-cout << "     . :" << endl;
-cout << "   .   ." << endl;
-cout << "" << endl;
-cout << "      ." << endl;
+    printf("UP\n");
+    printf("     .\n");
+printf("   .:;:.\n");
+printf(" .:;;;;;:.\n");
+printf("   ;;;;;\n");
+printf("   ;;;;;\n");
+printf("   ;;;;;\n");
+printf("   ;;;;;\n");
+printf("   ;:;;;\n");
+printf("   : ;;;\n");
+printf("     ;:;\n");
+printf("   . :.;\n");
+printf("     . :\n");
+printf("   .   .\n");
+printf("\n");
+printf("      .\n");
 
 }
 
 void leftDirection(){
-    cout << "LEFT" << endl;
-    cout << "       ." << endl;
-cout << "     .;;............ .." << endl;
-cout << "   .;;;;::::::::::::.." << endl;
-cout << "    ':;;:::::::::::: . ." << endl;
-cout << "      ':" << endl;
+    printf("LEFT\n");
+    printf("       .\n");
+printf("     .;;............ ..\n");
+printf("   .;;;;::::::::::::..\n");
+printf("    ':;;:::::::::::: . .\n");
+printf("      ':\n");
 
 }
 
 void rightDirection(){
-    cout << "RIGHT" << endl;
-    cout << "                  ." << endl;
-cout << "   .. ............;;." << endl;
-cout << "    ..::::::::::::;;;;." << endl;
-cout << "  . . ::::::::::::;;:'" << endl;
-cout << "                  :'" << endl;
+    printf("RIGHT\n");
+    printf("                  .\n");
+printf("   .. ............;;.\n");
+printf("    ..::::::::::::;;;;.\n");
+printf("  . . ::::::::::::;;:'\n");
+printf("                  :'\n");
 
 }
 
 void credits(){
-    cout << "CREDITS" << endl;
-    cout << "I wanna thank me for taking no days off \n";
+    printf("CREDITS\n");
+    printf("I wanna thank me for taking no days off \n");
 
-}*/
+}
